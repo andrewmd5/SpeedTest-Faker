@@ -6,7 +6,6 @@ from urlparse import parse_qs
 import functions
 
 ping = 16
-server = 1767
 accuracy = 8
 server = functions.setup()
 
