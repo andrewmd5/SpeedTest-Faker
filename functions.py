@@ -22,11 +22,11 @@ def calculate_distance(origin, destination):
 
 
 def get_closest_servers(client, complete=False):
-    uh = urllib2.urlopen('http://speedtest.net/speedtest-servers.php')
-    server_xml = uh.read()
-    if int(uh.code) != 200:
+    connection = urllib2.urlopen('http://speedtest.net/speedtest-servers.php')
+    server_xml = connection.read()
+    if int(connection.code) != 200:
         return None
-    uh.close()
+    connection.close()
     root = DOM.parseString(server_xml)
     servers = {}
     for server in root.getElementsByTagName('server'):
